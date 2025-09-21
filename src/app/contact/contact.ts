@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-
+import { Router } from '@angular/router'; //
 
 @Component({
   selector: 'app-contact',
@@ -11,19 +11,21 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 export class Contact {
   contactForm: FormGroup;
   hideEmail = false;
-  private router: any;
 
-  constructor(private fb: FormBuilder) {
+
+
+  constructor(private fb: FormBuilder,  private router: Router) {
     this.contactForm = this.fb.group({
       prenom: ['', Validators.required],
       nom: ['', Validators.required],
       age: [''],
       email: ['', [Validators.required, Validators.email]],
       commentaire: ['', Validators.required],
+
     });
   }
 
-  toggleEmailVisibility() {
+  public toggleEmailVisibility() {
     const emailCtrl = this.contactForm.get('email');
     if (!emailCtrl){
       return;
@@ -39,8 +41,9 @@ export class Contact {
     }
   }
 
-  onSubmit() {
+  public onSubmit() {
     if (this.contactForm.valid) {
+      alert("Le formulaire est valide");
       this.router.navigate(['/accueil']);
     }
   }
