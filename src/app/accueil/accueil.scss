@@ -1,7 +1,12 @@
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+}
+
 img {
   max-width: 100%;
   height: auto;
-  display: block;
-  margin: 20px auto;
   border-radius: 10px;
 }

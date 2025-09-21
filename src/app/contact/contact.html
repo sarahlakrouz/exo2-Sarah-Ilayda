@@ -1,0 +1,53 @@
+<div class="form-container">
+  <h2>Formulaire de Contact</h2>
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+    <label for="prenom">Prénom :</label>
+    <input id="prenom" type="text" formControlName="prenom" required>
+
+    @if (contactForm.get('prenom')?.invalid && contactForm.get('prenom')?.touched) {
+      <div class="error">
+        Le prénom est requis.
+      </div>
+    }
+
+    <label for="nom">Nom :</label>
+    <input id="nom" type="text" formControlName="nom" required>
+
+    @if (contactForm.get('nom')?.invalid && contactForm.get('nom')?.touched) {
+      <div class="error">
+        Le nom est requis.
+      </div>
+    }
+
+    <label for="age">Âge :</label>
+    <input id="age" type="number" formControlName="age">
+
+    <label>
+      <input type="checkbox" (change)="toggleEmailVisibility()"> Hide Email
+    </label>
+
+    @if (!hideEmail) {
+      <label for="email">Email :</label>
+      <input id="email" type="email" formControlName="email" required>
+
+      @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
+        <div class="error">
+          L'email est requis et doit contenir un @.
+        </div>
+      }
+    }
+
+    <label for="commentaire">Commentaire :</label>
+    <textarea id="commentaire" formControlName="commentaire" required></textarea>
+
+    @if (contactForm.get('commentaire')?.invalid && contactForm.get('commentaire')?.touched) {
+      <div class="error">
+        Le commentaire est requis.
+      </div>
+    }
+
+    <button type="submit" [disabled]="contactForm.invalid">Envoyer</button>
+  </form>
+</div>
