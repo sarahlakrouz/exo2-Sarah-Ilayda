@@ -1,9 +1,6 @@
 
 import { Component } from '@angular/core';
-export interface Film {
-  title: string;
-  poster: string;
-}
+import {Film} from '../interfaces/films';
 
 
 @Component({

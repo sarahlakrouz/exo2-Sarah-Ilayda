@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
-import { ContactService } from '../Services/contact.service';
+import { ContactService } from '../services/contact.service';
 import { NotFound } from '../not-found/not-found';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,11 +12,14 @@ import { NotFound } from '../not-found/not-found';
   styleUrls: ['./gestion.scss']
 })
 export class Gestion implements OnInit {
-  lastContact: { name: string; email: string; message: string; age:number } | null = null;
+  public lastContact: { name: string; email: string; message: string; age:number } | null = null;
 
-  constructor(private contactService: ContactService) {}
+  constructor(private contactService: ContactService, private router: Router) {}
 
   public ngOnInit () {
     this.lastContact = this.contactService.getContact();
+    if (!this.lastContact) {
+      this.router.navigate(['/404']);
+    }
   }
 }
