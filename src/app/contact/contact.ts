@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router'; //
+import { Router } from '@angular/router';
+import { ContactService } from '../contact.service';
+
 
 @Component({
   selector: 'app-contact',
@@ -14,7 +16,7 @@ export class Contact {
 
 
 
-  constructor(private fb: FormBuilder,  private router: Router) {
+  constructor(private fb: FormBuilder,  private router: Router,  private contactService: ContactService) {
     this.contactForm = this.fb.group({
       prenom: ['', Validators.required],
       nom: ['', Validators.required],
@@ -43,7 +45,14 @@ export class Contact {
 
   public onSubmit() {
     if (this.contactForm.valid) {
+      const contactData = {
+        name: this.contactForm.value.prenom + ' ' + this.contactForm.value.nom,
+        email: this.contactForm.value.email,
+        message: this.contactForm.value.commentaire
+      };
+      this.contactService.setContact(contactData);
       alert("Le formulaire est valide");
+      this.contactForm.reset();
       this.router.navigate(['/accueil']);
     }
   }

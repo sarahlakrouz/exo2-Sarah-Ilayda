@@ -1,1 +1,15 @@
-<p>gestion works!</p>
+<div class="gestion-container">
+  @if (lastContact) {
+    <div class="contact-info">
+      <h2>Dernier formulaire reçu</h2>
+      <p><strong>Nom :</strong> {{ lastContact.name }}</p>
+      <p><strong>Email :</strong> {{ lastContact.email }}</p>
+      <p><strong>Message :</strong> {{ lastContact.message }}</p>
+    </div>
+  } @else {
+    <div class="not-found">
+      <h2>404 Not Found</h2>
+      <img src="assets/404.png" alt="Not Found" />
+    </div>
+  }
+</div>

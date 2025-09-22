@@ -1,14 +1,11 @@
 
 import { Component } from '@angular/core';
-import {NgForOf, NgIf} from '@angular/common';
+
 
 @Component({
   selector: 'app-liste',
   templateUrl: './liste.html',
-  imports: [
-    NgForOf,
-    NgIf
-  ],
+  imports: [],
   styleUrls: ['./liste.scss']
 })
 export class Liste{
@@ -25,7 +22,7 @@ export class Liste{
   selectedFilm: { title: string, poster: string } | null = null;
 
 
-  selectFilm(film: { title: string, poster: string }) {
+  public selectFilm(film: { title: string, poster: string }) {
     this.selectedFilm = film;
   }
 }

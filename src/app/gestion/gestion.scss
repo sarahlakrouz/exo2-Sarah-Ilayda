@@ -1,0 +1,27 @@
+.gestion-container {
+  text-align: center;
+  margin-top: 50px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.contact-info {
+  background: linear-gradient(135deg, #f8a5c2, #f78fb3, #f6e58d);
+  display: inline-block;
+  padding: 20px 40px;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.contact-info h2 {
+  margin-bottom: 20px;
+}
+
+.not-found {
+  color: #ff69b4;
+}
+
+.not-found img {
+  max-width: 250px;
+  margin-top: 20px;
+}
