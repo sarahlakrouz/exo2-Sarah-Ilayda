@@ -7,9 +7,6 @@
       <p><strong>Message :</strong> {{ lastContact.message }}</p>
     </div>
   } @else {
-    <div class="not-found">
-      <h2>404 Not Found</h2>
-      <img src="assets/404.jpeg" alt="Not Found" />
-    </div>
+    <app-not-found></app-not-found>
   }
 </div>
