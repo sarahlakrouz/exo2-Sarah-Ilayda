@@ -11,7 +11,7 @@ import { NotFound } from '../not-found/not-found';
   styleUrls: ['./gestion.scss']
 })
 export class Gestion implements OnInit {
-  lastContact: { name: string; email: string; message: string } | null = null;
+  lastContact: { name: string; email: string; message: string; age:number } | null = null;
 
   constructor(private contactService: ContactService) {}
 

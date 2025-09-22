@@ -4,9 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ContactService {
-  private lastContact: { name: string; email: string; message: string } | null = null;
+  private lastContact: { name: string; email: string; message: string; age: number } | null = null;
 
-  public setContact(contact: { name: string; email: string; message: string }) {
+  public setContact(contact: { name: string; email: string; message: string; age: number }) {
     this.lastContact = contact;
   }
 

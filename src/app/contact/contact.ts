@@ -48,7 +48,8 @@ export class Contact {
       const contactData = {
         name: this.contactForm.value.prenom + ' ' + this.contactForm.value.nom,
         email: this.contactForm.value.email,
-        message: this.contactForm.value.commentaire
+        message: this.contactForm.value.commentaire,
+        age: this.contactForm.value.age
       };
       this.contactService.setContact(contactData);
       alert("Le formulaire est valide");
