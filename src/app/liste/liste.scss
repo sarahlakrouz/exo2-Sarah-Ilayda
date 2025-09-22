@@ -4,7 +4,7 @@
   font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
-/* Liste en mode bulles */
+
 .film-list {
   list-style: none;
   padding: 0;
@@ -37,14 +37,14 @@
   white-space: nowrap;
 }
 
-/* Détails du film sélectionné */
+
 .film-details {
   margin-top: 30px;
 }
 
 .film-details h2 {
   font-size: 2rem;
-  color: #ff69b4; /* rose girly */
+  color: #ff69b4;
   text-shadow: 1px 1px 4px rgba(255, 182, 193, 0.7);
   margin-bottom: 20px;
 }

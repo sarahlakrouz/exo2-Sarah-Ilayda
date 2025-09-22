@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { ContactService } from '../contact.service';
+import { Component,OnInit } from '@angular/core';
+import { ContactService } from '../Services/contact.service';
 import { NotFound } from '../not-found/not-found';
+
 
 @Component({
   selector: 'app-gestion',
@@ -9,12 +10,12 @@ import { NotFound } from '../not-found/not-found';
   templateUrl: './gestion.html',
   styleUrls: ['./gestion.scss']
 })
-export class Gestion {
+export class Gestion implements OnInit {
   lastContact: { name: string; email: string; message: string } | null = null;
 
   constructor(private contactService: ContactService) {}
 
-  ngOnInit() {
+  public ngOnInit () {
     this.lastContact = this.contactService.getContact();
   }
 }

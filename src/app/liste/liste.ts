@@ -1,16 +1,19 @@
 
 import { Component } from '@angular/core';
+export interface Film {
+  title: string;
+  poster: string;
+}
 
 
 @Component({
   selector: 'app-liste',
+  standalone: true,
   templateUrl: './liste.html',
-  imports: [],
   styleUrls: ['./liste.scss']
 })
-export class Liste{
-
-  films = [
+export class Liste {
+  films: Film[] = [
     { title: 'F1 le film', poster: 'assets/f1.jpeg' },
     { title: 'Divergent', poster: 'assets/divergent.jpeg' },
     { title: 'Black Panther', poster: 'assets/blackpanther.jpeg' },
@@ -18,11 +21,9 @@ export class Liste{
     { title: 'Spiderman: No Way Home', poster: 'assets/spiderman.jpeg' }
   ];
 
+  selectedFilm: Film | null = null;
 
-  selectedFilm: { title: string, poster: string } | null = null;
-
-
-  public selectFilm(film: { title: string, poster: string }) {
+  public selectFilm(film: Film) {
     this.selectedFilm = film;
   }
 }
