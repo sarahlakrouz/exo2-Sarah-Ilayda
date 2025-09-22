@@ -1,0 +1,61 @@
+.films-container {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* Liste en mode bulles */
+.film-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.film-list li {
+  background: linear-gradient(135deg, #f8a5c2, #f78fb3, #f6e58d);
+  padding: 12px 20px;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.film-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 105, 180, 0.4);
+}
+
+.film-list li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Détails du film sélectionné */
+.film-details {
+  margin-top: 30px;
+}
+
+.film-details h2 {
+  font-size: 2rem;
+  color: #ff69b4; /* rose girly */
+  text-shadow: 1px 1px 4px rgba(255, 182, 193, 0.7);
+  margin-bottom: 20px;
+}
+
+.film-details img {
+  max-width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(255,105,180,0.5);
+  transition: transform 0.3s ease;
+}
+
+.film-details img:hover {
+  transform: scale(1.05);
+}

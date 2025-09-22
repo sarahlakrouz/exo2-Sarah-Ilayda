@@ -10,4 +10,5 @@ export const routes: Routes = [
   { path: 'accueil', component: Accueil},
   { path: 'gestion', component: Gestion},
   { path: 'contact', component: Contact},
+  { path: '**', component: Accueil },
 ];
